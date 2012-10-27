@@ -132,7 +132,7 @@ public class TiUIWebView extends TiUIView
 		settings.setLightTouchEnabled(true);
 		// Store the webview localstorage.
 		settings.setDatabaseEnabled(true);
-		String packageName = "com.shortcircuit.rover";
+		String packageName = getApplicationContext().getPackageName();
 		settings.setDatabasePath("/data/data/" + packageName + "/databases");
 		settings.setDomStorageEnabled(true); // Required by some sites such as Twitter. This is in our iOS WebView too.
 
