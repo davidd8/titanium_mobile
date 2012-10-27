@@ -344,6 +344,10 @@ public class TiHTTPClient
 		
 		private void finishedReceivingEntityData(long contentLength) throws IOException
 		{
+			if (responseOut == null) {
+				// Avoid annoying null pointers.
+				return;
+			}
 			if (responseOut instanceof ByteArrayOutputStream) {
 				ByteArrayOutputStream byteStream = (ByteArrayOutputStream) responseOut;
 				responseData = TiBlob.blobFromData(byteStream.toByteArray(), contentType);
