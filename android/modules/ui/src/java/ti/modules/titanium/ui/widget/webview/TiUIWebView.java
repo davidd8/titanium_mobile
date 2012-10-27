@@ -129,6 +129,10 @@ public class TiUIWebView extends TiUIView
 		settings.setJavaScriptCanOpenWindowsAutomatically(true);
 		settings.setLoadsImagesAutomatically(true);
 		settings.setLightTouchEnabled(true);
+		// Store the webview localstorage.
+		settings.setDatabaseEnabled(true);
+		String packageName = "com.shortcircuit.rover";
+		settings.setDatabasePath("/data/data/" + packageName + "/databases");
 		settings.setDomStorageEnabled(true); // Required by some sites such as Twitter. This is in our iOS WebView too.
 
 		// enable zoom controls by default

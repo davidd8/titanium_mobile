@@ -33,7 +33,6 @@ public class TiWebChromeClient extends WebChromeClient
 	{
 		super();
 		this.tiWebView = webView;
-		this.tiWebView.getSettings().setGeolocationEnabled(false);
 	}
 	
 	@Override
